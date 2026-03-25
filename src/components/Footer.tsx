@@ -1,6 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { ShieldCheck } from "@phosphor-icons/react";
+
+const kanzleiLinks = [
+  { label: "Leistungen", href: "/#leistungen" },
+  { label: "Über uns", href: "/#ueber-uns" },
+  { label: "Team", href: "/#ueber-uns" },
+  { label: "Karriere", href: "/#kontakt" },
+];
+
+const rechtlichesLinks = [
+  { label: "Impressum", href: "/impressum" },
+  { label: "Datenschutz", href: "/datenschutz" },
+  { label: "AGB", href: "/impressum" },
+];
 
 export default function Footer() {
   return (
@@ -27,14 +41,14 @@ export default function Footer() {
               Kanzlei
             </h4>
             <ul className="space-y-3">
-              {["Leistungen", "Über uns", "Team", "Karriere"].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
+              {kanzleiLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
                     className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -45,14 +59,14 @@ export default function Footer() {
               Rechtliches
             </h4>
             <ul className="space-y-3">
-              {["Impressum", "Datenschutz", "AGB"].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
+              {rechtlichesLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
                     className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

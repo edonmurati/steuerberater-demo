@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
+import Link from "next/link";
 import {
   MapPin,
   Phone,
@@ -216,9 +217,17 @@ export default function Contact() {
                       htmlFor="datenschutz"
                       className="text-xs text-navy/40 leading-relaxed"
                     >
-                      Ich habe die Datenschutzerklärung gelesen und bin mit der
-                      Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage
-                      einverstanden.
+                      Ich habe die{" "}
+                      <Link
+                        href="/datenschutz"
+                        className="text-bronze hover:text-bronze-light transition-colors underline underline-offset-2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Datenschutzerklärung
+                      </Link>{" "}
+                      gelesen und bin mit der Verarbeitung meiner Daten zur
+                      Bearbeitung meiner Anfrage einverstanden.
                     </label>
                   </div>
 
